@@ -51,7 +51,9 @@ namespace FPSETUL3
             Console.WriteLine("14-Problema 14: Mutare 0 uri la sfarsit (eficient)");
             Console.WriteLine("15-Problema 15: Eliminarea dubluri");
             Console.WriteLine("21-Problema 21: Operatii cu multimi neordonate");
-            Console.WriteLine("25-Problema 25: Interclasare vectori");
+            //mai are rost sa fac problema cu multimi ordonate? ar merge cam la fel, zic si eu =))
+
+            Console.WriteLine("25-Problema 25: Interclasare vectori ordonati");
             Console.WriteLine("28-Problema 28: MergeSort pentru un vector");
             Console.WriteLine("29-Problema 29: Quicksort pentru un vector");
 
