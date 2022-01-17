@@ -125,7 +125,7 @@ namespace FPSETUL3
         {
 
             multime x = new multime(cin("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu"));
-            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr - un spatiu"));
+            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu"));
 
             multime rezultat = multime.Intersectia(x, y);
             rezultat.Afisare();
@@ -134,7 +134,7 @@ namespace FPSETUL3
         private static void reuniune()
         {
             multime x = new multime(cin("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu"));
-            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr - un spatiu"));
+            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu"));
 
             multime rezultat = multime.Reuniune(x, y);
             rezultat.Afisare();
@@ -150,7 +150,7 @@ namespace FPSETUL3
         private static void diferenta2()
         {
             multime x = new multime(cin("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu"));
-            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr - un spatiu"));
+            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu"));
 
             multime rezultat = multime.Diferenta(y, x);
             rezultat.Afisare();
