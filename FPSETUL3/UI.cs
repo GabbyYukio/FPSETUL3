@@ -50,6 +50,7 @@ namespace FPSETUL3
             Console.WriteLine("13-Problema 13: Sortare prin insertie");
             Console.WriteLine("14-Problema 14: Mutare 0 uri la sfarsit (eficient)");
             Console.WriteLine("15-Problema 15: Eliminarea dubluri");
+            Console.WriteLine("25-Problema 25: Interclasare vectori");
             Console.WriteLine("28-Problema 28: MergeSort pentru un vector");
             Console.WriteLine("29-Problema 29: Quicksort pentru un vector");
 
@@ -110,6 +111,9 @@ namespace FPSETUL3
                     break;
                 case "15":
                     Problema15.rezolvare();
+                    break;
+                case "25":
+                    Problema25.rezolvare();
                     break;
                 case "28":
                     Problema28.rezolvare();
