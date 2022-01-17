@@ -113,17 +113,19 @@ namespace FPSETUL3
     }
     class Problema21
     {
-        private static void intersectie()
+        private static string cin(string mesaj)
         {
-            Console.WriteLine("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu");
+            Console.WriteLine(mesaj);
+            Console.Write(">>> ");
             string input = Console.ReadLine();
             input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-            multime x = new multime(input);
+            return input;
+        }
+        private static void intersectie()
+        {
 
-            Console.WriteLine("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu");
-            input = Console.ReadLine();
-            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-            multime y = new multime(input);
+            multime x = new multime(cin("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu"));
+            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr - un spatiu"));
 
             multime rezultat = multime.Intersectia(x, y);
             rezultat.Afisare();
@@ -131,45 +133,24 @@ namespace FPSETUL3
 
         private static void reuniune()
         {
-            Console.WriteLine("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu");
-            string input = Console.ReadLine();
-            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-            multime x = new multime(input);
-
-            Console.WriteLine("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu");
-            input = Console.ReadLine();
-            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-            multime y = new multime(input);
+            multime x = new multime(cin("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu"));
+            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr - un spatiu"));
 
             multime rezultat = multime.Reuniune(x, y);
             rezultat.Afisare();
         }
         private static void diferenta()
         {
-            Console.WriteLine("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu");
-            string input = Console.ReadLine();
-            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-            multime x = new multime(input);
-
-            Console.WriteLine("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu");
-            input = Console.ReadLine();
-            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-            multime y = new multime(input);
+            multime x = new multime(cin("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu"));
+            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr - un spatiu"));
 
             multime rezultat = multime.Diferenta(x, y);
             rezultat.Afisare();
         }
         private static void diferenta2()
         {
-            Console.WriteLine("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu");
-            string input = Console.ReadLine();
-            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-            multime x = new multime(input);
-
-            Console.WriteLine("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu");
-            input = Console.ReadLine();
-            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
-            multime y = new multime(input);
+            multime x = new multime(cin("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu"));
+            multime y = new multime(cin("Va rog introduceti elementele pentru a doua multime, fiecare separat printr - un spatiu"));
 
             multime rezultat = multime.Diferenta(y, x);
             rezultat.Afisare();
