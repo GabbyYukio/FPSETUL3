@@ -8,6 +8,7 @@ namespace FPSETUL3
 {
     class multime
     {
+        //::::::::::::::::::Constructori
         public int[] data;
         public multime(string input)
         {
@@ -26,14 +27,14 @@ namespace FPSETUL3
 
 
         //::::::::::::Functii
-        private static multime Reuniune(multime x, multime y)
+        public static multime Reuniune(multime x, multime y)
         {
             multime rezultat = Concatanare(x, y);
             rezultat.RemoveDuplicates();
             return rezultat;
         }
 
-        private static multime Intersectia(multime x, multime y)//returneaza o multime care interesecteaza elementele din multimea x si y
+        public static multime Intersectia(multime x, multime y)//returneaza o multime care interesecteaza elementele din multimea x si y
         {
             multime rezultat = new multime();//declaram rezultatul ca nou obiect
             int n = 0;//pozitia pentru rezultat
@@ -47,7 +48,7 @@ namespace FPSETUL3
             rezultat.RemoveDuplicates();//ca sa eliminam duplicaturile
             return rezultat;
         }
-        private static multime Diferenta(multime x, multime y)// returneaza o multime ca si diferenta dintre x si y
+        public static multime Diferenta(multime x, multime y)// returneaza o multime ca si diferenta dintre x si y
         {
             multime rezultat = new multime();
             int n = 0, i=0, j=0;
@@ -69,7 +70,7 @@ namespace FPSETUL3
             }
             return rezultat;
         }
-        private static multime Concatanare(multime x, multime y)
+        public static multime Concatanare(multime x, multime y)
         {
             multime solutie= new multime();
             for(int i=0; i<x.data.Length; i++)
@@ -81,7 +82,7 @@ namespace FPSETUL3
         }
 
         //:::::::::::::Proprietati
-        private void Afisare()
+        public void Afisare()
         {
             for(int i=0; i<this.data.Length; i++)
                 Console.Write("{0}",this.data[i]);
@@ -112,6 +113,87 @@ namespace FPSETUL3
     }
     class Problema21
     {
+        private static void intersectie()
+        {
+            Console.WriteLine("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu");
+            string input = Console.ReadLine();
+            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+            multime x = new multime(input);
+
+            Console.WriteLine("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu");
+            input = Console.ReadLine();
+            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+            multime y = new multime(input);
+
+            multime rezultat = multime.Intersectia(x, y);
+            rezultat.Afisare();
+        }
+
+        private static void reuniune()
+        {
+            Console.WriteLine("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu");
+            string input = Console.ReadLine();
+            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+            multime x = new multime(input);
+
+            Console.WriteLine("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu");
+            input = Console.ReadLine();
+            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+            multime y = new multime(input);
+
+            multime rezultat = multime.Reuniune(x, y);
+            rezultat.Afisare();
+        }
+        private static void diferenta()
+        {
+            Console.WriteLine("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu");
+            string input = Console.ReadLine();
+            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+            multime x = new multime(input);
+
+            Console.WriteLine("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu");
+            input = Console.ReadLine();
+            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+            multime y = new multime(input);
+
+            multime rezultat = multime.Diferenta(x, y);
+            rezultat.Afisare();
+        }
+        private static void diferenta2()
+        {
+            Console.WriteLine("Va rog introduceti elementele pentru prima multime, fiecare separat printr-un spatiu");
+            string input = Console.ReadLine();
+            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+            multime x = new multime(input);
+
+            Console.WriteLine("Va rog introduceti elementele pentru a doua multime, fiecare separat printr-un spatiu");
+            input = Console.ReadLine();
+            input = string.Join("", input.Split(default(string[]), StringSplitOptions.RemoveEmptyEntries));
+            multime y = new multime(input);
+
+            multime rezultat = multime.Diferenta(y, x);
+            rezultat.Afisare();
+        }
+        private static void user_input()
+        {
+            Console.Write(">>> ");
+            string input = Console.ReadLine();
+            switch( input)
+            {
+                case "1":
+                    intersectie();
+                    break;
+                case "2":
+                    reuniune();
+                    break;
+                case "3":
+                    diferenta();
+                    break;
+                case "4":
+                    diferenta2();
+                    break;
+            }
+        }
         private static void printmenu()
         {
             Console.WriteLine("Va rog alegeti dintre optiunile" );
@@ -123,6 +205,7 @@ namespace FPSETUL3
         public static void rezolvare()
         {
             printmenu();
+            user_input();
         }
     }
 }
