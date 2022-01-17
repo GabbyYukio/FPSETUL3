@@ -10,17 +10,14 @@ namespace FPSETUL3
     {
         public static int cautare(int k,int a,int m,int b, int[] v)
         {
+            if (a < b)
+                return -1;
             if (v[m] == k)
                 return m;
+            else if (k < v[m])
+                return cautare(k, a, (a + m) / 2, m - 1, v);
             else
-            {
-                if (k > v[m])
-                {
-                    return cautare(k, m, (m + b) / 2, b, v);
-                }
-                else
-                    return cautare(k, 0, m / 2, m, v);
-            }
+                return cautare(k, m + 1, (m + b) / 2, b, v);
         }
         public cautare_binara(int k)
         {
